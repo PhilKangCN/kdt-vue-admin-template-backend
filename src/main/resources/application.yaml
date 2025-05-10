@@ -1,0 +1,28 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /kdt-vue-admin-template
+spring:
+  application:
+    name: kdt-vue-admin-template
+  datasource:
+    url: jdbc:mysql://localhost:3306/kdt_project?serverTimeZone=Asia/Beijing
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update # 自动生成表
+    properties:
+      hibernate:
+        format_sql: true # 打印格式化后的sql
+    show-sql: true
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: static/**
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: com.kdt.mapper/**/*.xml
